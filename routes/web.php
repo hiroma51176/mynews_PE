@@ -18,9 +18,14 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
     Route::get('news/create', 'Admin\NewsController@add');
     Route::post('news/create', 'Admin\NewsController@create'); #追記
-    // PHP/Laravel 12 課題２、３
+    // PHP/Laravel 12 課題２
     Route::get('profile/create', 'Admin\ProfileController@add')->middleware('auth');
+    // PHP/Laravel 13 課題３
+    Route::post('profile/create', 'Admin\ProfileController@create');
+    // PHP/Laravel 12 課題３
     Route::get('profile/edit', 'Admin\ProfileController@edit')->middleware('auth');
+    // PHP/Laravel 13 課題６
+    Route::post('profile/edit', 'Admin\ProfileController@update');
 });
 
 
