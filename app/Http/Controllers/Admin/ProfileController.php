@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Profile;
-use App\Profile_History;
+use App\ProfileHistory;
 
 use Carbon\Carbon;
 
@@ -52,7 +52,7 @@ class ProfileController extends Controller
         $profile->fill($profile_form)->save();
         
         // PHP/Laravel 17 課題で追加
-        $profile_history = new Profile_History;
+        $profile_history = new ProfileHistory;
         $profile_history->profile_id = $profile->id;
         $profile_history->edited_at = Carbon::now();
         $profile_history->save();

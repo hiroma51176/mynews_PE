@@ -16,8 +16,8 @@ class Profile extends Model
         );
         
     // PHP/Laravel 17 課題で追加
-    public function profile_histories()
+    public function profilehistories()
     {
-        return $this->hasmany('App\Profile_History');
+        return $this->hasmany('App\ProfileHistory');
     }
 }
