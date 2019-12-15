@@ -28,7 +28,9 @@
                     <div class="form-group row">
                         <label class="col-md-2" for="gender">性別(gender)</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="gender" value="{{ $profile_form->gender }}">
+                            {{-- 変更完了まで残す<input type="text" class="form-control" name="gender" value="{{ $profile_form->gender }}"> --}}
+                            <p><input type="radio" name="gender" value="男"> 男</p>
+                            <p><input type="radio" name="gender" value="女"> 女</p>
                         </div>
                     </div>
                     <div class="form-group row">
