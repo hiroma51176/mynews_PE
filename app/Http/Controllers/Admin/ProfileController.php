@@ -37,7 +37,8 @@ class ProfileController extends Controller
     {
         $profile = Profile::find($request->id);
         if(empty($profile)){
-            abort(404);
+            //abort(404);
+            return redirect('profile');
         }
         return view('admin.profile.edit', ['profile_form' => $profile]);
     }
@@ -57,6 +58,6 @@ class ProfileController extends Controller
         $profile_history->edited_at = Carbon::now();
         $profile_history->save();
         
-        return redirect('admin/profile/edit');
+        return redirect('profile');
     }
 }
