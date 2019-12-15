@@ -85,5 +85,6 @@
                 @yield('content')
             </main>
         </div>
+        <h1>デプロイ完了</h1>
     </body>
 </html>
